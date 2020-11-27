@@ -8,8 +8,8 @@ const Nav = () => {
       <Container>
         <Logo />
         <Wrapper>
-          <a href="">Search</a>
-          <a href="">Login</a>
+          <a href="https://www.google.com/">Search</a>
+          <a href="https://www.google.com/">Login</a>
           <Button>Join Now</Button>
         </Wrapper>
       </Container>
