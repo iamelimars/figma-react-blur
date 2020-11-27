@@ -48,8 +48,7 @@ const BtnContainer = styled.div`
 `;
 
 const Container = styled.div`
-  width: 100%;
-
+  padding: 1rem;
   h5 {
     color: #515151;
     font-weight: 500;

@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
+import { ReactComponent as SearchIcon } from "../assets/search.svg";
 import styled from "styled-components";
 
 const Nav = () => {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <OuterContainer>
       <Container>
         <Logo />
+        <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <span />
+        <span />
+        <span />
+      </Hamburger>
         <Wrapper>
-          <a href="https://www.google.com/">Search</a>
+            <SearchIcon />
           <a href="https://www.google.com/">Login</a>
           <Button>Join Now</Button>
         </Wrapper>
@@ -16,6 +23,22 @@ const Nav = () => {
     </OuterContainer>
   );
 };
+
+const Hamburger = styled.div`
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  span {
+    height: 2px;
+    width: 25px;
+    background: #7b7fda;
+    margin-bottom: 4px;
+    border-radius: 5px;
+  }
+  @media (max-width: 768px) {
+    display: flex;
+  }
+`;
 
 const OuterContainer = styled.div`
   position: absolute;
@@ -70,6 +93,11 @@ const Button = styled.button`
   &:hover {
     box-shadow: 0px 17px 16px -11px #ecb6d7;
     transform: translateY(-5px);
+  }
+
+  @media (max-width: 670px) {
+    /* width: 100%; */
+    padding: 0.3;
   }
 `;
 
